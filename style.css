@@ -4,8 +4,10 @@ body {
      */
     font: 100%/1.5 system-ui;
    }
-   img {
-    width: 100vw;
-    height: auto;
-    display: block;
-}
+   
+img {
+      width: 90vw;  /* The image takes 60% of the viewport width */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Remove default extra spacing */
+      margin: 5vh auto; /* Keep 20% margin from top and bottom, and auto-center horizontally */
+   }  
