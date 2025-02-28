@@ -31,51 +31,95 @@
 	<main>
 		<section>
 			<h2>Subtheme: Zoning and Housing Supply</h2>
+			<h3>Data Overview </h3>
+
+			<p>
+				The primary dataset, <b>"Single-Family Zoning vs. Other Housing Zoning with Census Info in Metro Boston Municipalities,"</b> is derived from MACP’s Zoning Atlas. It includes spatial and tabular data for 101 Metro Boston municipalities, indicating whether areas are zoned for single-family housing or other housing types and whether they fall under the MBTA Communities list.
+		    <br>
+		
+				Additionally, the dataset incorporates demographic data from the 2010 Census (population, racial composition) and 2014-2018 Census estimates (income levels). 
+				<br>
+				Another key dataset, <b>"Mapping Inequality: Redlining Data"</b>, sourced from <a href="https://catalog.archives.gov/id/720357">1935-1940 City Survey Files</a>, provides historical context on redlining policies.
+				
+			</p>
+		</section>
+
+		<section>
+			<h3>Data Limitation</h3>
+			<ol>
+				<li> The zoning dataset and MBTA Communities list lack timestamps, making it unclear whether the data is up to date. </li>
+				<li> Demographic data is over five years old and may not reflect current trends. </li>
+				<li> Some municipalities appear twice in the dataset due to their mixed zoning status. However, demographic discrepancies exist between these duplicates, despite census data being from the same period. For consistency, I calculated the average values for analysis. </li>
+				<li> Several municipalities lack complete demographic data, which could mislead interpretations.
+					For example, some municipalities, such as Sharon, Everett, Burlington, Sudbury, Belmont, Chelsea, Waltham, Framingham, Lynn, and Somerville, are recorded as having zero population, which is clearly incorrect.
+				</li>
+				<li>
+					These errors likely stem from census block groups not aligning perfectly with municipal boundaries, affecting data accuracy. Future analysis should incorporate updated census data to ensure more reliable findings.
+				</li>
+	
+			</ol>
+
+
+		</section>
+
+		<section>
+			
 
 			<h3>Overall Analysis Questions</h3>
 			<ol>
-				<li>QUESTION_1</li>
-				<li>QUESTION_2</li>
-				<li>QUESTION_3</li>
-				<li>...</li>
+				<li> What are the housing zoning classifications across the municipalities in Metro Boston?  </li>
+				<li> How do zoning classifications differ among communities that are subject to the MBTA Community Act?  </li>
+				<li> Do municipal demographics shape housing zoning, or does zoning influence demographics?  </li>
+				<li> How has historical housing policy, such as redlining, affected today's housing zoning classifications?</li>
 			</ol>
 		</section>
 
 		<section>
-			<h2>Discoveries & Insights</h2>
+			<h3>Discoveries & Insights</h3>
+			<p>
+				This analysis initially focused on understanding the current distribution of housing zoning classifications across Metro Boston municipalities. It then explored potential interplay factors that influence zoning patterns, such as demographic composition, household income, housing type preferences, and historical zoning policies.
+			</p>
 
 			<figure>
 				<img src="../images/Assignment2/Figure1.png" alt="Figure1" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
-				</figcaption>
+				provides a broad overview of zoning classifications across Metro Boston. Red areas indicate municipalities where all residentially zoned land is designated for single-family housing. Light green areas represent municipalities with no single-family zoning, while dark green areas highlight municipalities that contain a mix of zoning types, including single-family zoning. <br>
+				The map reveals that six municipalities are exclusively zoned for single-family housing. However, this representation does not reflect the proportion of single-family zoning within mixed-zoned municipalities, where single-family zoning may constitute anywhere from 2% to 99% of total residential zoning. Therefore, I created Map 2 to provide better insight into the proportion of single-family zoning distributing across the Metro Boston area.
+			</figcaption>
 			</figure>
 
 			<figure>
 				<img src="../images/Assignment2/Figure2.png" alt="Figure2" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+					offers a clearer understanding of the distribution of single-family zoning by quantifying the extent of such zoning within each municipality. 
+					The map suggests that more than one-third of Metro Boston municipalities have over 80% of their land designated for single-family housing. Furthermore, more than half of the municipalities have at least 60% of their residential areas zoned exclusively for single-family homes. 
 				</figcaption>
 			</figure>
 
+			<p>	
+				I was triggered to see how the MBTA Community Act impacts housing zoning status, particularly in municipalities that still maintain a high percentage (over 80%) of single-family zoning.
+			</p>
 			<figure>
 				<img src="../images/Assignment2/Figure3.png" alt="Figure3" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+					highlights thirty municipalities with more than 80% single-family zoning that are subject to the MBTA’s zoning requirements. <b>These municipalities present significant opportunities for zoning reforms aimed at increasing housing density. Future analyses should investigate potential non-compliance with the MBTA Community Act by reviewing current zoning codes and identifying which municipalities have made efforts to align with state mandates.</b>
 				</figcaption>
 			</figure>
+			<p>
+				The following investigates moved on to whether zoning classifications correlate with demographic characteristics, including population size, racial composition, and household types. The goal is to determine whether zoning policies are shaped by demographic preferences or if zoning itself influences demographic composition.
+			</p>
 
 			<figure>
 				<img src="../images/Assignment2/Figure4.png" alt="Figure4" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				 examines total population size across Metro Boston. Initial plots (not included) included municipalities recorded with zero population, suggest that certain demographic records are unreliable <b>(Refer to Data limitation Section)</b>. Revised plot (above) excluding municipalities with populations below fifty, suggests that municipalities with lower proportions of single-family zoning tend to have higher population densities. This trend conforms with my expectation, as areas with less restrictive zoning generally allow for denser residential development.
 				</figcaption>
 			</figure>
 
 			<figure>
 				<img src="../images/Assignment2/Figure5.png" alt="Figure5" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+					evaluates racial distribution across Metro Boston and its relationship to single-family zoning. The entire metro Boston region remains predominantly White, but no strong correlation is observed between race distribution and single-family zoning proportions. While zoning policies may contribute to segregation in some regions, this dataset does not provide conclusive evidence of a direct link between single-family zoning and racial composition.
 				</figcaption>
 			</figure>
 
@@ -83,43 +127,57 @@
 				<img src="../images/Assignment2/Figure6a.png" alt="Figure6a" />
 				<img src="../images/Assignment2/Figure6b.png" alt="Figure6b" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+					explores the age composition of municipalities with different zoning classifications. I examined whether the proportion of younger or older residents correlated with zoning density and also conducted a spot check of White and Hispanic population proportions across Boston municipalities. <br>
+					The results did not suggest any significant relationship between age distribution and zoning classification. The chart is structured in descending order, from municipalities with 100% single-family zoning to those with none, with the color of the bars representing zoning classifications.
 				</figcaption>
 			</figure>
 
 			<figure>
 				<img src="../images/Assignment2/Figure7.png" alt="Figure7" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+					presents the household income distribution across Metro Boston municipalities. Based on <a href="https://www.neilsberg.com/insights/boston-ma-median-household-income/">Neilsberg Research </a>, Boston’s median household income between 2014 and 2018 ranged from $60K to $90K. To better analyze income variation, I categorized households into three income brackets: low-income (<$60K), middle-income ($60K-$150K), and high-income (>$150K). Once again, there was no distinct correlation between zoning classifications and household income distribution. <br>
+					The data suggests that most Metro Boston municipalities are relatively affluent, with a large portion of households falling into the high-income bracket. However, a few municipalities—Chelsea, Everett, Ipswich, and Winthrop—stand out, as more than half of their households qualify as low-income.
 				</figcaption>
 			</figure>
 
 			<figure>
 				<img src="../images/Assignment2/Figure8.png" alt="Figure8" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				examines the distribution of different household types across Metro Boston and its relationship to zoning classifications. Specifically, I investigated whether municipalities with a higher proportion of non-family households tend to have higher-density zoning. The results did not support this hypothesis, as there was no clear correlation between the proportion of non-family households and zoning classifications. Some municipalities with a high proportion of non-family households still maintained predominantly single-family zoning, while others with a mix of family and non-family households had more flexible zoning policies.
 				</figcaption>
 			</figure>
+			<p>	
+				Since household type alone did not correlate to zoning classifications, I considered whether transportation access might play a role. 
+			</p>
 
 			<figure>
 				<img src="../images/Assignment2/Figure9.png" alt="Figure9" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				explores how household composition correlates with proximity to Metro Boston’s transit network. The results vaguely suggest that municipalities closer to public transit lines tend to have a higher proportion of non-family households. While this may indicate a possible relationship between transit access and housing preferences, the pattern is not strong enough to draw definitive conclusions.
 				</figcaption>
 			</figure>
+			<p>
+				At this stage, I had examined multiple aspects of the dataset "Single-Family Zoning vs. Other Housing Zoning with Census Info in Metro Boston Municipalities" but found no strong evidence that demographic characteristics or economic status directly influence housing zoning classifications or vice versa. In an effort to uncover additional factors shaping zoning policies, I expanded my search to "Mapping Inequality: Redlining Data".
+			</p>
 
 			<figure>
 				<img src="../images/Assignment2/Figure10.png" alt="Figure10" />
 				<figcaption>
-				ENTER IMAGE CAPTION HERE.
+				overlays modern housing zoning classifications with historical redlining maps. The results suggest that municipalities with higher-density zoning tend to align with historically low-graded redlined areas. This finding implies that past discriminatory housing policies may have had a lasting impact on current zoning regulations. 
 				</figcaption>
 			</figure>
 		</section>
 
 		<section>
-			<h2>Summary</h2>
+			<h3>Summary</h3>
 
-			<p>WRITE FINAL SUMMARY HERE.</p>
+			<p>
+				This study finds that more than half of Metro Boston municipalities have at least 60% of their land zoned for single-family housing, with a significant number exceeding 80%. Many of these municipalities are subject to the MBTA Community Act, highlighting potential areas for zoning reform. However, the analysis does not reveal strong correlations between zoning classifications and demographic characteristics such as race, income, or household composition. Additionally, historical redlining maps align closely with areas currently zoned for higher-density housing, suggesting that past housing policies may have influenced modern zoning patterns.
+			</p>
+			
+			<p>
+				Future analyses should explore the relationship between zoning policies and housing value, affordability. It is particularly interesting to investigate whether single-family zoning contributes to rising property values and housing costs, or if other factors, such as transportation networks, school qualities, or other amenities play a more significant role. Additionally, incorporating data on property sales and production rate could provide insights into whether single-family zoning protects home values or merely perpetuates housing scarcity. The intended research could inform discussions on zoning reform and the effectiveness of policies aimed at increasing housing availability in Metro Boston.
+			</p>
 		</section>
 	</main>
 
