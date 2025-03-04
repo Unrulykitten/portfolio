@@ -95,7 +95,7 @@ main {
 
 /* Ensure figures are contained within the frame */
 figure {
-    max-width: 100%;  /* Figures should not exceed their parent container */
+    max-width: 95%;  /* Figures should not exceed their parent container */
     width: 100%;  /* Ensure figure uses available space */
     margin: 1em auto;  /* Centers figure within its section */
     padding: 0.5rem;
